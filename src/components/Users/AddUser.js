@@ -19,8 +19,13 @@ const enteredName = nameInputRef.current.value;
     ageInputRef.current.value = '';
 }
 
+const userNameChangeHandler = (event) => {
+    setEnteredUserName(event.target.value)
+}
 
-
+const ageChangeHandler = (event) => {
+    setEnteredAge(event.target.value)
+}
 
     return (
 <Card className = {classes.input}>
@@ -29,6 +34,8 @@ const enteredName = nameInputRef.current.value;
         <input
         id = 'username'
         type= 'text'
+        value={enteredUserName}
+        onChange={userNameChangeHandler}
         ref={nameInputRef}
 
         />
@@ -36,6 +43,8 @@ const enteredName = nameInputRef.current.value;
         <input
         id = 'age'
         type= 'number'
+        value={enteredAge}
+        onChange={ageChangeHandler}
         ref={ageInputRef}
         />
         <Button type= 'submit'>Add User</Button>
