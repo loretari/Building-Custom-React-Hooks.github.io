@@ -1,27 +1,18 @@
-import React, { useState, Fragment} from 'react';
-import AddUser from './components/Users/AddUser';
-import UsersList from './components/Users/UsersList';
+import React from 'react';
+import BackwardCounter from './components/BackwardCounter'
+import ForwardCounter from './components/ForwardCounter'
+
 
 
 function App() {
- const [usersList, setUserList] = useState([]);
 
-
- const addUserHandler = (uName, uAge) => {
-     setUserList((prevUserList) => {
-         return [
-             ...prevUserList,
-             {name: uName, age: uAge, id: Math.random().toString()},
-         ]
-     })
- }
 
     return (
-<Fragment>
-    <AddUser onAddUser = {addUserHandler} />
-    <UsersList users = {usersList} />
+<React.Fragment>
+    <ForwardCounter />
+    <BackwardCounter />
 
-        </Fragment>
+</React.Fragment>
     )
 }
 
