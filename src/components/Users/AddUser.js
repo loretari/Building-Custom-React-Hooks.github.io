@@ -1,6 +1,7 @@
 import React, { useState, useRef} from 'react';
 import Card from '../UI/Card'
 import classes from './AddUser.module.css'
+import Button from '../UI/Button';
 
 const AddUser = (props) => {
     const nameInputRef = useRef();
@@ -37,7 +38,7 @@ const enteredName = nameInputRef.current.value;
         type= 'number'
         ref={ageInputRef}
         />
-        <button type= 'submit'>Add User</button>
+        <Button type= 'submit'>Add User</Button>
     </form>
 </Card>
     )
